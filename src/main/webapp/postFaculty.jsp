@@ -5,6 +5,8 @@
 </head>
 <body>
 <%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+
     if (session.getAttribute("username") == null) {
         response.sendRedirect("index.jsp");
     }
@@ -15,6 +17,9 @@
     <input type="text" name="facultyName">
     <input type="submit">
 </form><br>
+<%
+
+%>
 
 </body>
 </html>
