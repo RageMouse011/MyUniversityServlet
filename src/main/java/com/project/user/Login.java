@@ -1,4 +1,4 @@
-package com.project.login;
+package com.project.user;
 
 import com.project.web.dao.LoginDAO;
 
@@ -19,7 +19,7 @@ public class Login extends HttpServlet {
 
         LoginDAO dao = new LoginDAO();
 
-        if(dao.check(uname, pass)) {
+        if(dao.check(uname, pass) && uname != "") {
             HttpSession session = request.getSession();
             session.setAttribute("username", uname);
             response.sendRedirect("app.jsp");

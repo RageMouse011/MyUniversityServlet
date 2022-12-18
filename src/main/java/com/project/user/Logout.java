@@ -1,4 +1,4 @@
-package com.project.login;
+package com.project.user;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
