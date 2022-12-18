@@ -5,9 +5,15 @@
 </head>
 <body>
 <%
-    int salaryId = (Integer) request.getAttribute("salaryId");
-    Double salaryValue = (Double) request.getAttribute("salaryValue");
-    out.println("New salary was successfully registered, its value is :" + salaryValue + " and it's id is: " + salaryId);
+    if (session.getAttribute("username") == null) {
+        response.sendRedirect("index.jsp");
+    }
 %>
+<form action="PostSalary" method="post">
+    <h3>To register new salary u have to input it's value</h3>
+    <input type="text" name="salaryValue">
+    <input type="submit">
+</form>
+
 </body>
 </html>

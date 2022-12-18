@@ -4,10 +4,16 @@
     <title>Registration new career</title>
 </head>
 <body>
-      <%
-        int careerId = (Integer) request.getAttribute("careerId");
-        String careerName = (String) request.getAttribute("careerName");
-        out.println("New career was successfully registered, its name is :" + careerName + " and it's id is: " + careerId);
-      %>
+<%
+    if (session.getAttribute("username") == null) {
+        response.sendRedirect("index.jsp");
+    }
+%>
+<form action="PostCareer" method="post">
+    <h3>To register new career u have to input it's name</h3>
+    <input type="text" name="careerName">
+    <input type="submit">
+</form><br>
+
 </body>
 </html>
